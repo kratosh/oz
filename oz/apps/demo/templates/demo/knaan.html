@@ -1,0 +1,11 @@
+{%  extends "demo/user.html" %}
+
+{% block page_header %}
+    <script>
+        // page setup
+        $(function() {
+            divimg("Knaan1.png");
+            poll('/ajax/whathelper', 500, onrequested);
+        })
+    </script>
+{% endblock %}

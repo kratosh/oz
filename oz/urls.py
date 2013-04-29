@@ -1,12 +1,13 @@
 from django.conf.urls import patterns, include, url
+from django.views.generic import RedirectView
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'oz.views.home', name='home'),
+    # default app is demo
+    url(r'^$', RedirectView.as_view(url='/demo/')),
     # url(r'^oz/', include('oz.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

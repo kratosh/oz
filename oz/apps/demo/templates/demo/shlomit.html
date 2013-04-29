@@ -1,0 +1,40 @@
+{%  extends "demo/user.html" %}
+
+{% block page_header %}
+    <script>
+        // page setup
+        $(function() {
+            // initial background
+            divimg("Shlomit1.png");
+
+            // reset global setup
+            touch('/reset');
+
+            // wire search box to respond to "enter"
+            $("#search").keyup(function(event){
+                if(event.keyCode == 13){
+                    //$("#search").attr("value", "clicked");
+                    divimg("Shlomit2.png");
+                }
+            });
+
+            // wire hotspot for clicking helper (Knaan) button
+            $("#hotspot").click(function() {
+                requesthelp();
+            });
+
+            // when clicking the helper button, signal we want help
+            function requesthelp() {
+                touch('../ajax/helperclicked');
+            }
+
+            // handler for when server notifies that helper has accepted
+            function onhelperaccepted() {
+                alert("Click to start session!");
+                window.location.href = "./solve.html";
+            }
+
+            poll('/ajax/whataccepted', 500, onhelperaccepted);
+        })
+    </script>
+{% endblock %}

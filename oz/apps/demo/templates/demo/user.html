@@ -15,24 +15,43 @@
             $("#center").css("background-image", "url('/static/demo/" + img + "')")
         };
 
+        // wire the key '5' to reload page
+        $(document).keyup(function(event) {
+            if (event.keyCode == 0x35) {
+                window.location.href = ".";
+            }
+        })
+
+        // wire the key '9' to go to solve directly
+        $(document).keyup(function(event) {
+            if (event.keyCode == 0x39) {
+                window.location.href = "./solve";
+            }
+        })
+
         // ?
         function onrequested() {
             alert("Click to Teach!");
             touch('/ajax/acceptedclicked');
             window.location.href = "Knaan_solve.html";
         }
-
-        // page setup
-        $(function() {
-            divimg("Knaan1.png");
-            poll('/ajax/whathelper', 500, onrequested);
-        })
     </script>
+
+    <style>
+        #hotspot {
+            position: relative;
+            left: 23px; top: 180px; width: 300px; height:400px;
+        }
+    </style>
+
+    {% block page_header %}
+    {% endblock %}
 </head>
 <body align="center">
 <div id="wrap">
 <div id="center">
     <input id="search" type="text"/><br/>
+    <div id="hotspot" style='width:100%;height:200px'></div><br/>
 </div>
 </div>
 </body>
