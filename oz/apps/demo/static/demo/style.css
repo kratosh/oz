@@ -1,0 +1,26 @@
+#wrap{
+    /* hack - centralize in screen (wrap actual div) */
+    position:absolute;
+    top:50%;
+    left:50%;
+    display:block;
+}
+
+#center{
+    background-repeat:no-repeat;
+    position: relative;
+    height: 600px;         /* I need fixed height and width, I can't do this with liquid layouts */
+    width: 800px;
+    margin-top: -300px;       /* margins are negative and they're half of dimensions above */
+    margin-left: -400px;
+    display:block;
+}
+
+#search {
+    position: relative;
+    left: 23px; top: 175px; width: 300px;
+    border: 1px solid transparent;
+    font-size:24px;
+    text-align:right;
+    direction:rtl;
+}

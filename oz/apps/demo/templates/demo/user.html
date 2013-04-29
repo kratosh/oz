@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>user</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="/static/demo/code.js"></script>
+    <link href="/static/demo/style.css" rel="stylesheet" type="text/css"/>
+
+    <style>
+    </style>
+
+    <script>
+        // set image for central div
+        function divimg(img) {
+            $("#center").css("background-image", "url('/static/demo/" + img + "')")
+        };
+
+        // ?
+        function onrequested() {
+            alert("Click to Teach!");
+            touch('/ajax/acceptedclicked');
+            window.location.href = "Knaan_solve.html";
+        }
+
+        // page setup
+        $(function() {
+            divimg("Knaan1.png");
+            poll('/ajax/whathelper', 500, onrequested);
+        })
+    </script>
+</head>
+<body align="center">
+<div id="wrap">
+<div id="center">
+    <input id="search" type="text"/><br/>
+</div>
+</div>
+</body>
+</html>
