@@ -5,7 +5,15 @@
         // page setup
         $(function() {
             divimg("Knaan1.png");
-            poll('/ajax/whathelper', 500, onrequested);
+            poll('help_requested', 500, onrequested);
         })
+
+        function onrequested() {
+            alert("help requested! accpet by clicking ok.")
+            setflag('helper_accepted');
+            setInterval(function() {
+                window.location.href = "./solve";
+            }, 1000);
+        }
     </script>
 {% endblock %}

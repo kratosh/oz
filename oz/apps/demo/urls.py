@@ -5,4 +5,7 @@ urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name="demo/index.html"), ),
     url(r'^knaan/$', TemplateView.as_view(template_name="demo/knaan.html"), ),
     url(r'^shlomit/$', TemplateView.as_view(template_name="demo/shlomit.html"), ),
+
+    # ajax for the poor
+
 )

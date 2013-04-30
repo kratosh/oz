@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     'oz.apps.demo',
+    'oz.apps.sharedstate',
 )
 
 # A sample logging configuration. The only tangible logging

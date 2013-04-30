@@ -8,7 +8,7 @@
             divimg("Shlomit1.png");
 
             // reset global setup
-            touch('/reset');
+            reset_demo_state();
 
             // wire search box to respond to "enter"
             $("#search").keyup(function(event){
@@ -25,7 +25,7 @@
 
             // when clicking the helper button, signal we want help
             function requesthelp() {
-                touch('../ajax/helperclicked');
+                setflag('help_requested');
             }
 
             // handler for when server notifies that helper has accepted
@@ -34,7 +34,7 @@
                 window.location.href = "./solve.html";
             }
 
-            poll('/ajax/whataccepted', 500, onhelperaccepted);
+            poll('helper_accepted', 500, onhelperaccepted);
         })
     </script>
 {% endblock %}

@@ -17,4 +17,5 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 
     url(r'^demo/', include('oz.apps.demo.urls')),
+    url(r'^sharedstate/', include('oz.apps.sharedstate.urls')),
 )
