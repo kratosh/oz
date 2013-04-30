@@ -1,1 +1,1 @@
-web: gunicorn oz.wsgi
+web: python manage.py collectstatic --noinput; gunicorn oz.wsgi

@@ -1,4 +1,4 @@
 *.pyo
 *.pyc
 .idea
-
+staticfiles
