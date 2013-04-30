@@ -2,6 +2,16 @@
 <html>
 <head>
     <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="/static/demo/code.js"></script>
+    <script>
+        $(function() {
+            $("#wbupdate").click(function() {
+                // alert($("#wbid").attr("value"));
+                set_whiteboard_id($("#wbid").attr("value"));
+            })
+        })
+    </script>
 </head>
 <body>
 Open one of the following role pages to start the demo:
@@ -9,5 +19,8 @@ Open one of the following role pages to start the demo:
     <li><a href="./shlomit">Shlomit</a> - the student in need of help</li>
     <li><a href="./knaan">Knaan</a> - the student lending its helping services</li>
 </ul>
+Before running a demo, please set a fresh whiteboard id:
+<input id="wbid" type="text" value="{{ shared_states.whiteboard.wbid }}"/>
+<input id="wbupdate" type="button" value="update"/>
 </body>
 </html>

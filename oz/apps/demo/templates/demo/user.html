@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>user</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="/static/demo/code.js"></script>
-    <link href="/static/demo/style.css" rel="stylesheet" type="text/css"/>
+{% extends "demo/base_ipad.html" %}
 
-    <style>
-    </style>
-
+{% block ipad_header %}
     <script>
-        // set image for central div
-        function divimg(img) {
-            $("#center").css("background-image", "url('/static/demo/" + img + "')")
-        };
-
         // wire the key '5' to reload page
         $(document).keyup(function(event) {
             if (event.keyCode == 0x35) {
@@ -37,15 +24,13 @@
         }
     </style>
 
+    {# we allow further page header block #}
     {% block page_header %}
     {% endblock %}
-</head>
-<body align="center">
-<div id="wrap">
-<div id="center">
+
+{% endblock %}
+
+{% block centerpiece %}
     <input id="search" type="text"/><br/>
     <div id="hotspot" style='width:100%;height:200px'></div><br/>
-</div>
-</div>
-</body>
-</html>
+{% endblock %}

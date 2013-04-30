@@ -1,0 +1,14 @@
+{% extends "demo/base_ipad.html" %}
+
+{% block ipad_header %}
+    <script>
+        $(function() {
+            divimg("{{ background_image }}");
+        });
+    </script>
+{% endblock %}
+
+{% block centerpiece %}
+    <div style="height:305px"></div>
+    <iframe id="board" src="http://awwapp.com/draw.html#{{ shared_states.whiteboard.wbid }}" style="width:66%;height:200px;top:400px;"></iframe>
+{% endblock %}

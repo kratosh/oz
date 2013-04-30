@@ -1,6 +1,12 @@
 $(document).ready(function() {
 });
 
+// set image for central div
+function divimg(img) {
+    $("#center").css("background-image", "url('/static/demo/" + img + "')")
+};
+
+// post a json (TODO: with djangorest, the way god intended)
 function post_json(url, data) {
     $.ajax({
         url: url,
@@ -14,6 +20,10 @@ function post_json(url, data) {
 // reset
 function reset_demo_state() {
     post_json('/sharedstate/demostate/set/', {'help_requested': false, 'helper_accepted': false});
+}
+
+function set_whiteboard_id(wbid) {
+    post_json('/sharedstate/whiteboard/set/', {'wbid' : wbid});
 }
 
 // set a flag
