@@ -21,9 +21,8 @@ urlpatterns = patterns('',
     url(r'^sharedstate/', include('oz.apps.sharedstate.urls')),
 )
 
-# support static files in heroku when not in debug
+# support static files in heroku
 # source: http://stackoverflow.com/questions/9047054/heroku-handling-static-files-in-django-app
-if not settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-    )
+urlpatterns += patterns('',
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+)
